@@ -1,0 +1,20 @@
+@import "colors";
+
+.authForm {
+  background-color: $white;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  width: 300px;
+  max-width: 100%;
+
+  &__emoji {
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__reaction {
+    text-align: center;
+  }
+}

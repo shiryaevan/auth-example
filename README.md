@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting started
+
+Rename `.env.example` to `.env`
+
+Run `yarn` or `npm i` 
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,0 +1,55 @@
+@import "colors";
+
+.input {
+  -webkit-appearance: none;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: $black;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  height: 40px;
+  outline: none;
+  padding: 0 12px;
+  text-overflow: ellipsis;
+  width: 100%;
+  font-family: inherit;
+  background-color: $white;
+
+  &:focus {
+    border-color: $green;
+  }
+
+  &::placeholder {
+    color: $grey;
+  }
+
+  &._error,
+  &:invalid{
+    border-color: $red;
+  }
+
+  &._disabled,
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    color: $black;
+  }
+
+  input::-webkit-credentials-auto-fill-button {
+    position: absolute;
+    right: 40px;
+  }
+}
