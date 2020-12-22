@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, SyntheticEvent } from "react";
+import { HTMLAttributes, InputHTMLAttributes, SyntheticEvent } from "react";
 import cn from "classnames";
 
 import { Button } from "../Button";
@@ -11,9 +11,15 @@ type PropsInput = {
     name: IconProps["name"];
     onClick: (e: SyntheticEvent) => void;
   };
+  iconButtonAttrs?: HTMLAttributes<HTMLButtonElement>;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-export const Input = ({ icon, isInvalid, ...rest }: PropsInput) => {
+export const Input = ({
+  icon,
+  isInvalid,
+  iconButtonAttrs,
+  ...rest
+}: PropsInput) => {
   return (
     <div className={styles.inputWrapper}>
       <input
@@ -27,6 +33,7 @@ export const Input = ({ icon, isInvalid, ...rest }: PropsInput) => {
           className={styles.inputWrapper__icon}
           variant="unstyled"
           type="button"
+          {...iconButtonAttrs}
         >
           <Icon name={icon.name} />
         </Button>

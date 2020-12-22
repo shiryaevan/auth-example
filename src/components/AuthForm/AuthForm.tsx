@@ -58,6 +58,7 @@ export const AuthForm = () => {
             {({ input, meta }) => (
               <UIField label="Email">
                 <Input
+                  aria-required={true}
                   type="email"
                   autoComplete="username"
                   autoFocus
@@ -72,11 +73,17 @@ export const AuthForm = () => {
             {({ input, meta }) => (
               <UIField label="Password">
                 <Input
+                  aria-required={true}
                   autoComplete="current-password"
                   type={passwordIsVisible ? "text" : "password"}
                   icon={{
                     name: passwordIsVisible ? "Eye" : "Blink",
                     onClick: onPasswordVisibilityClickHandler
+                  }}
+                  iconButtonAttrs={{
+                    "aria-label": passwordIsVisible
+                      ? "Hide password"
+                      : "Show password"
                   }}
                   isInvalid={meta.error && meta.touched}
                   {...input}
@@ -85,7 +92,15 @@ export const AuthForm = () => {
             )}
           </Field>
           <Spacer />
-          <Button type="submit" disabled={submitting || !valid}>
+          <Button
+            type="submit"
+            disabled={submitting || !valid}
+            aria-label={
+              formIsValid === false || submitFailed
+                ? "Form is invalid"
+                : "Form is valid"
+            }
+          >
             Login
           </Button>
         </form>
