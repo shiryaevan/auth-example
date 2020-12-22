@@ -26,6 +26,7 @@ export const Input = ({ icon, isInvalid, ...rest }: PropsInput) => {
           onClick={icon.onClick}
           className={styles.inputWrapper__icon}
           variant="unstyled"
+          type="button"
         >
           <Icon name={icon.name} />
         </Button>
